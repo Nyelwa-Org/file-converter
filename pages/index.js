@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
-// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -17,13 +14,15 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.header}>
           <h1>Convert Your</h1>
-          <h2>File Easily</h2>
+          <h2>Files Easily</h2>
         </div>
         <div className={styles.body}>
-          
+          <div className={styles.dotted}>
+            <i className='bi bi-cloud-arrow-down-fill'></i>
+          </div>
         </div>
         <div className={styles.footer}>
-          
+          <h5>&copy; Markson F. Senguji | 2023</h5>
         </div>
       </main>
     </>

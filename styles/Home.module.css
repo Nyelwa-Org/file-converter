@@ -1,10 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
 }
 
 .header{
@@ -12,11 +9,12 @@
   flex-direction: inherit;
   align-items: inherit;
   font-family: var(--font-mono);
-  padding: 6rem;
+  padding: 2rem;
 }
 
 .header h1{
   color: rgb(var(--secondary-color));
+  font-weight: normal;
 }
 
 .header h2{
@@ -24,11 +22,27 @@
 }
 
 .body{
+  width: 700px;
+  height: 400px;
+  margin: 2rem;
+  padding: 10px;
+  background-color: rgb(var(--foreground-rgb),.3);
+}
 
+.dotted{
+  width: 680px;
+  height: 250px;
+  border: 2px dashed rgb(var(--background-end-rgb));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .footer{
-
+  color: rgb(var(--background-end-rgb));
+  font-family: var(--font-mono);
+  font-weight: normal;
 }
 
 /* Enable hover only on non-touch devices */
