@@ -18,7 +18,10 @@ export default function Home() {
         </div>
         <div className={styles.body}>
           <div className={styles.dotted}>
-            <i className='bi bi-cloud-arrow-down-fill'></i>
+            <i className='bi bi-cloud-arrow-down-fill' style={{ color: 'rgb(var(--secondary-color))', fontSize: '1.5rem' }}></i>
+            <h5>Drag&Drop file here</h5>
+            <h5>OR</h5>
+            <button type="" className={styles.button}> <i class="bi bi-paperclip" style={{ color: 'rgb(var(--background-end-rgb))' }}></i> Choose file</button>
           </div>
         </div>
         <div className={styles.footer}>
