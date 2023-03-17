@@ -1,7 +1,17 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import { ChangeEvent, useState } from "react";
 
 export default function Home() {
+
+  const [file, setFile] = useState();
+
+  const handleFileChange = (e) => {
+    if(e.target.files){
+      setFile(e.target.files[0]);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -28,10 +38,9 @@ export default function Home() {
             <option>DOCX</option>
           </select>
         </div>
-        <button type="" className={styles.button}> <i className="bi bi-paperclip" style={{ color: 'rgb(var(--background-end-rgb))' }}></i> Choose file</button>
-        {/* <div className={styles.footer}>
-          <h5>&copy; Markson F. Senguji | 2023</h5>
-        </div> */}
+        <label for='file-upload' className={styles.button}><i className="bi bi-cloud-arrow-up-fill" style={{ color: 'rgb(var(--background-end-rgb))' }}></i>  Choose file</label>
+        <input id="file-upload" type="file" onChange={handleFileChange}/>
+        <div>{file && `${file.name} - ${file.type}`}</div>
       </main>
     </>
   );
