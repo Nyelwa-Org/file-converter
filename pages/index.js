@@ -3,11 +3,10 @@ import styles from "@/styles/Home.module.css";
 import { ChangeEvent, useState } from "react";
 
 export default function Home() {
-
   const [file, setFile] = useState();
 
   const handleFileChange = (e) => {
-    if(e.target.files){
+    if (e.target.files) {
       setFile(e.target.files[0]);
     }
   };
@@ -38,9 +37,30 @@ export default function Home() {
             <option>DOCX</option>
           </select>
         </div>
-        <label for='file-upload' className={styles.button}><i className="bi bi-cloud-arrow-up-fill" style={{ color: 'rgb(var(--background-end-rgb))' }}></i>  Choose file</label>
-        <input id="file-upload" type="file" onChange={handleFileChange}/>
-        <div>{file && `${file.name} - ${file.type}`}</div>
+        {file ? (
+          <span>
+            <div className={styles.listFiles}>{`${file.name}`}</div>
+            <div className={styles.extraBtn}>
+              <button type="" className={styles.button}>
+                Add More files
+              </button>
+              <button type="" className={styles.button}>
+                Convert
+              </button>
+            </div>
+          </span>
+        ) : (
+          <span>
+            <label htmlFor="file-upload" className={styles.button}>
+              <i
+                className="bi bi-cloud-arrow-up-fill"
+                style={{ color: "rgb(var(--background-end-rgb))" }}
+              ></i>{" "}
+              Choose file
+            </label>
+            <input id="file-upload" type="file" onChange={handleFileChange} />
+          </span>
+        )}
       </main>
     </>
   );

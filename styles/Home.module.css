@@ -11,7 +11,6 @@
   background-color: rgb(var(--secondary-color));
   color: rgb(var(--background-end-rgb));
   font-size: medium;
-  margin: 20px;
   cursor: pointer;
 }
 
@@ -49,6 +48,19 @@
   font-weight: normal;
 }
 
+.listFiles{
+  color: rgb(var(--background-end-rgb));
+  font-weight: normal;
+  background-color: rgb(var(--foreground-rgb), .3);
+  padding: 10px;
+}
+
+.extraBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+}
 
 .footer{
   color: rgb(var(--background-end-rgb));
