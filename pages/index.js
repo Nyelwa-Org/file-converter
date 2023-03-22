@@ -38,8 +38,14 @@ export default function Home() {
           </select>
         </div>
         {file ? (
-          <span>
-            <div className={styles.listFiles}>{`${file.name}`}</div>
+          <div className={styles.listBtn}>
+            <div className={styles.listFiles}>
+              {`${file.name}`}{" "}
+              <i
+                className="bi bi-x-lg"
+                style={{ color: "rgb(var(--background-end-rgb))" }}
+              ></i>
+            </div>
             <div className={styles.extraBtn}>
               <button type="" className={styles.button}>
                 Add More files
@@ -48,18 +54,14 @@ export default function Home() {
                 Convert
               </button>
             </div>
-          </span>
+          </div>
         ) : (
-          <span>
+          <div className={styles.listBtn}>
             <label htmlFor="file-upload" className={styles.button}>
-              <i
-                className="bi bi-cloud-arrow-up-fill"
-                style={{ color: "rgb(var(--background-end-rgb))" }}
-              ></i>{" "}
               Choose file
             </label>
             <input id="file-upload" type="file" onChange={handleFileChange} />
-          </span>
+          </div>
         )}
       </main>
     </>
