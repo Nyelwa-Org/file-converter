@@ -1,0 +1,8 @@
+.dropDown {
+    padding: 6px;
+    background: rgb(var(--white-rgb));
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline-width: 0px;
+}
