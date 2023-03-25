@@ -1,0 +1,9 @@
+.title{
+    font-family: --font-mono;
+    color: rgb(var(--secondary-color));
+}
+
+.description{
+    font-size: large;
+    color: rgb(var(--white-rgb));
+}

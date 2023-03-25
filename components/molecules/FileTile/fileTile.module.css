@@ -1,0 +1,7 @@
+.tile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(var(--black-rgb), .3);
+    padding: 10px;
+}

@@ -1,12 +1,16 @@
-import Button from "@/components/atoms/Button";
-import DropDown from "@/components/atoms/Dropdown";
+import Template from "@/components/templates/Template";
+import Head from "next/head";
 
 function App() {
   return (
     <>
-      <h1>Start Afresh</h1> 
-      <Button type="submit" value="Choose File" />
-      <DropDown/>
+      <Head>
+        <title>Just Convert</title>
+        <meta name="description" content="Created by Markson F. Senguji" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+      </Head>
+      <Template/>
     </>
   );
 }
