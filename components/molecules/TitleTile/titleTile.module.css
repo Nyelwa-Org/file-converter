@@ -1,9 +1,11 @@
 .title{
-    font-family: --font-mono;
+    font-family: monospace;
     color: rgb(var(--secondary-color));
+    padding: 20px;
 }
 
 .description{
     font-size: large;
     color: rgb(var(--white-rgb));
+    padding: 10px 0px 20px 0px;
 }

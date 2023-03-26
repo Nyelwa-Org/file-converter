@@ -1,8 +1,10 @@
 .button{
     padding: 10px;
+    margin: 20px;
     background-color: rgb(var(--secondary-color));
     color: rgb(var(--white-rgb));
-    font-family: --font-mono;
+    font-family: monospace;
     font-size: medium;
     border: none;
+    cursor: pointer;
 }
