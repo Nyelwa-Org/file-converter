@@ -3,15 +3,25 @@ import TitleTile from "@/components/molecules/TitleTile";
 import SelectOptionsTile from "@/components/molecules/SelectOptionsTile";
 import ChooseFileButton from "@/components/molecules/ChooseFileButton";
 import FileTile from "@/components/molecules/FileTile";
+import ButtonsTile from "@/components/molecules/ButtonsTile";
 import { useState } from "react";
 
 function Index() {
-  const [file, setFile] = useState();
+  const [uploadedFiles, setUploadedFiles] = useState([]);
 
-  const handleFileChange = (e) => {
-    if (e.target.files) {
-      setFile(e.target.files[0]);
-    }
+  
+
+  const handleUploadFiles = (files) => {
+    const uploaded = [...uploadedFiles];
+    files.some((file) => {
+      uploaded.push(file);
+    });
+    setUploadedFiles(uploaded);
+  };
+
+  const handleFileEvent = (e) => {
+    const chosenFiles = Array.prototype.slice.call(e.target.files);
+    handleUploadFiles(chosenFiles);
   };
 
   return (
@@ -19,10 +29,15 @@ function Index() {
       <div className={styles.main}>
         <TitleTile />
         <SelectOptionsTile />
-        {file ? (
-          <FileTile filename={file.name} />
+        {uploadedFiles ? (
+          <>
+            {uploadedFiles.map((file) => (
+              <FileTile filename={file.name} />
+            ))}
+            <ButtonsTile handleFileChange={handleFileEvent} />
+          </>
         ) : (
-          <ChooseFileButton handleFileChange={handleFileChange} />
+          <ChooseFileButton handleFileChange={handleFileEvent} />
         )}
       </div>
     </>
