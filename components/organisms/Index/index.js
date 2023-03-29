@@ -9,12 +9,12 @@ import { useState } from "react";
 function Index() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
-  
-
   const handleUploadFiles = (files) => {
     const uploaded = [...uploadedFiles];
     files.some((file) => {
-      uploaded.push(file);
+      uploaded.findIndex((f) => f.name === file.name) === -1
+        ? uploaded.push(file)
+        : alert("File Already Uploaded");
     });
     setUploadedFiles(uploaded);
   };
@@ -29,7 +29,7 @@ function Index() {
       <div className={styles.main}>
         <TitleTile />
         <SelectOptionsTile />
-        {uploadedFiles ? (
+        {uploadedFiles.length !== 0 ? (
           <>
             {uploadedFiles.map((file) => (
               <FileTile filename={file.name} />
