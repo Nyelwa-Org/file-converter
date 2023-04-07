@@ -1,3 +1,4 @@
+import useSWR from 'swr'
 import styles from "./index.module.css";
 import TitleTile from "@/components/molecules/TitleTile";
 import SelectOptionsTile from "@/components/molecules/SelectOptionsTile";
@@ -5,9 +6,14 @@ import ChooseFileButton from "@/components/molecules/ChooseFileButton";
 import FileTile from "@/components/molecules/FileTile";
 import ButtonsTile from "@/components/molecules/ButtonsTile";
 import { useState } from "react";
+import fetcher from "@/utils/fetcher";
 
 function Index() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  const { data } = useSWR('/api/formats', fetcher);
+
+  // console.log(data);
 
   const handleUploadFiles = (files) => {
     const uploaded = [...uploadedFiles];
