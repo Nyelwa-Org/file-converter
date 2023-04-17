@@ -1,9 +1,9 @@
 import styles from './dropdown.module.css'
 
-function DropDown(props) {
+function DropDown({options}) {
   return (
     <select className={styles.dropDown}>
-      <option> Select </option>
+      {options}
     </select>
   );
 }
