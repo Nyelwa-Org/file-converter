@@ -7,16 +7,12 @@ import FileTile from "@/components/molecules/FileTile";
 import ButtonsTile from "@/components/molecules/ButtonsTile";
 import { useState } from "react";
 import fetcher from "@/utils/fetcher";
-import selectOptions from '@/utils/selectOptions';
 
 function Index() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [options, setOptions] = useState("");
 
   const { data: formats } = useSWR('/api/formats', fetcher);
-
-  // setOptions(selectOptions(formats))
-  // console.log(formats);
 
   const handleUploadFiles = (files) => {
     const uploaded = [...uploadedFiles];
