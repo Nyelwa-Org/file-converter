@@ -1,4 +1,4 @@
-import useSWR from 'swr'
+import useSWR from "swr";
 import styles from "./index.module.css";
 import TitleTile from "@/components/molecules/TitleTile";
 import SelectOptionsTile from "@/components/molecules/SelectOptionsTile";
@@ -10,9 +10,21 @@ import fetcher from "@/utils/fetcher";
 
 function Index() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [options, setOptions] = useState("");
+  const [options, setOptions] = useState([]);
 
-  const { data: formats } = useSWR('/api/formats', fetcher);
+  // const { data: formats } = useSWR("/api/formats", fetcher);
+
+  // const new_formats = Array.prototype.slice.call(formats.data);
+
+  // const from = new Array();
+
+  // new_formats.map((new_format) => {
+  //   if(new_format.input_format == "pdf"){
+  //     from.push(new_format.input_format)
+  //   }
+  // })
+
+  // console.log(from)
 
   const handleUploadFiles = (files) => {
     const uploaded = [...uploadedFiles];
